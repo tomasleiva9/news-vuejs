@@ -1,0 +1,32 @@
+<l-default>
+  <div slot="header"></div>
+  <div slot="sidebar">
+    <h1></h1>
+  </div>
+  <div slot="content">
+
+    <div class="d-flex p-3">
+      <h5 class="mr-auto">
+        Resultado de pesquisa <br>
+        <small>contador</small>
+      </h5>
+      <div>
+        <a href>Mídias tradicionais</a>
+        <a href>Redes Sociais</a>
+        <a href>Releases</a>
+      </div>
+    </div>
+
+    <div class="d-flex p-3">
+      <span class="mr-auto"><i class="material-icons">filter_list</i> Filtros</span>
+      <label>
+        <input type="checkbox"> 100 de {{posts.length}} notícias
+      </label>
+    </div>
+
+    <div class="posts d-flex flex-wrap px-1 py-1">
+      <c-news :postItem="item" v-for="item in posts"></c-news>
+    </div>
+  </div>
+  <div slot="main-sidebar"></div>
+</l-default>

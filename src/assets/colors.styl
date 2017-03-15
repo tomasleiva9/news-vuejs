@@ -1,0 +1,41 @@
+@import 'variables.styl'
+
+body
+  background-color #f8f8f8
+  color $main-font-color
+
+.main-sidebar
+  background-color #333435
+
+.sidebar
+  background-color #eaecef
+
+.header
+.placeholder
+  background-color white
+
+
+/*News*/
+.post
+  .post-content
+    .post-channels
+      &:hover
+      &:active
+        border-color $main-color
+
+      &.active
+        opacity 1
+
+  .post-actions
+    a
+      color $main-color
+
+  &:hover
+  &:active
+    color $main-color-light
+
+  &.active::before
+    border-color $main-color
+  &.active:hover
+    outline-color $main-color
+

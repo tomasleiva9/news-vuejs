@@ -1,0 +1,46 @@
+<v-layout-view>
+  <div slot="sidebar">
+    <div class="view-info">
+      <ul class="list-group">
+        <li v-for="canal in post.canais">{{canal}}</li>
+      </ul>
+    </div>
+  </div>
+  <div slot="content">
+    <div class="view-head p-3 text-right">
+      <select name="Clientes" id="">
+        <option value="">Midea Carrier</option></select>
+    </div>
+    <div class="view-content d-flex">
+      <div class="view-news mr-auto">
+        <section class="view-news-head">
+          <strong>Web</strong><br>
+          <span>Veículo</span>
+        </section>
+
+        <h1 class="view-news-title">{{ post.title }}</h1>
+
+        <section class="view-news-sub text-right">
+          {{ filters.date(post.date).format('DD/MM/YYYY') }} |
+          {{ filters.date(post.date).format('DD/MM/YYYY') }}
+        </section>
+
+        <section class="view-news-content d-flex">
+            <div class="view-news-content-actions mr-auto">
+              <i class="material-icons p-2">format_align_left</i><br>
+              <i class="material-icons p-2">photo</i>
+            </div>
+            <div class="view-news-content-preview text-justify">
+              {{ post.body }}
+            </div>
+        </section>
+      </div>
+      <div class="view-actions text-right">
+        <router-link to="/" class="titulo">
+          <i class="material-icons p-2">close</i><br>
+        </router-link>
+      </div>
+    </div>
+
+  </div>
+</v-layout-view>
