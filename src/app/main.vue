@@ -25,7 +25,7 @@
         if (route.name === 'home' && route.from.name === 'view') {
           setTimeout(function () {
             const id = route.from.params.id.toString()
-            VueScrollTo.scrollTo('', '1000', {
+            VueScrollTo.scrollTo('.content', '1000', {
               container: '.content',
               offset: (document.getElementById(id).offsetTop)
             })

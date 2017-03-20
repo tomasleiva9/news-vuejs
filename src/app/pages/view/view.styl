@@ -29,3 +29,13 @@
   &:first-child
     transition-delay: .1s
 
+.slide-right-leave-active
+  .sidebar
+    opacity 0
+    transform translate3d(-50px, 0, 0)
+    transition-delay .2s
+  .content
+    div
+      opacity 0
+      transform translate3d(50px, 0, 0)
+      transition all .5s $timing .2s

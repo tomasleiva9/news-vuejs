@@ -14,7 +14,7 @@
   left $sidebars
   width 'calc(%s - %s)' % (100% $sidebars)
   opacity 1
-  transition opacity .5s $timing .4s
+  transition all .5s $timing .4s
 
 .sidebar
   @extends .content
@@ -39,3 +39,14 @@
     div
       opacity 0
       transition opacity .5s $timing
+
+.slide-right-leave-active
+  .sidebar
+    opacity 0
+    transform translate3d(-50px, 0, 0)
+    transition-delay .2s
+  .content
+    div
+      opacity 0
+      transform translate3d(50px, 0, 0)
+      transition all .5s $timing .2s
