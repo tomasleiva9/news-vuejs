@@ -17,10 +17,6 @@ Vue.$http = Axios
 import filters from './app/filters'
 Vue.prototype.filters = filters
 
-// Plugins
-import velocity from 'velocity-animate'
-window.velocity = velocity
-
 // Page style
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/app.styl'

@@ -5,8 +5,8 @@ import store from './store/main'
 Vue.use(VueRouter)
 
 // Pages
-import home from './pages/home/main'
-import view from './pages/view/main'
+import home from './pages/home/home'
+import view from './pages/view/view'
 
 // Routes
 const routes = [

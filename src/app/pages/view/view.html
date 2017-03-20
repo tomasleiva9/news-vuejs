@@ -2,27 +2,27 @@
   <div slot="sidebar">
     <div class="view-info">
       <ul class="list-group">
-        <li v-for="canal in post.canais">{{canal}}</li>
+        <li v-for="(canal, index) in item.Secoes.split(',')">{{canal.split('|')[0]}}</li>
       </ul>
     </div>
   </div>
-  <div slot="content">
+  <div slot="content" class="transition-in">
     <div class="view-head p-3 text-right">
-      <select name="Clientes" id="">
+      <select name="Clientes">
         <option value="">Midea Carrier</option></select>
     </div>
     <div class="view-content d-flex">
       <div class="view-news mr-auto">
         <section class="view-news-head">
-          <strong>Web</strong><br>
-          <span>Veículo</span>
+          <strong> {{ item.IdMidia }} </strong><br>
+          <span> {{ item.Fonte }} </span>
         </section>
 
-        <h1 class="view-news-title">{{ post.title }}</h1>
+        <h1 class="view-news-title">{{ item.Titulo }}</h1>
 
         <section class="view-news-sub text-right">
-          {{ filters.date(post.date).format('DD/MM/YYYY') }} |
-          {{ filters.date(post.date).format('DD/MM/YYYY') }}
+          {{ filters.date(item.DataCadastro).format('DD/MM/YYYY') }} |
+          {{ filters.date(item.DataVeiculacao).format('DD/MM/YYYY') }}
         </section>
 
         <section class="view-news-content d-flex">
@@ -31,7 +31,7 @@
               <i class="material-icons p-2">photo</i>
             </div>
             <div class="view-news-content-preview text-justify">
-              {{ post.body }}
+              {{ item.Conteudo }}
             </div>
         </section>
       </div>

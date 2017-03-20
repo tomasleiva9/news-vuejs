@@ -7,10 +7,13 @@ $calc = 'calc(-%s + %s)' % (100% $sidebars)
 
 .slide-left-leave-active
 .slide-left-enter-active
+  transition transform .5s $timing, opacity .5s $timing
+  transition-delay .2s
+
 .slide-right-leave-active
 .slide-right-enter-active
   transition transform .5s $timing, opacity .5s $timing
-  transition-delay .2s
+  transition-delay .5s
 
 .slide-left-enter
 .slide-right-leave-to

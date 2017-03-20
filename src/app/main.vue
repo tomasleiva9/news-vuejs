@@ -1,7 +1,7 @@
 <template>
   <div>
-    <transition :name="transitionName" v-on:enter="onEnter">
-      <router-view></router-view>
+    <transition :name="transitionName" v-on:after-enter="afterEnter">
+      <router-view class="full-content"></router-view>
     </transition>
   </div>
 </template>
@@ -9,6 +9,7 @@
 <script type="text/javascript">
   import store from './store/main'
   import router from './routes'
+  import VueScrollTo from 'vue-scrollto'
 
   export default {
     store,
@@ -19,12 +20,16 @@
       }
     },
     methods: {
-      onEnter (el) {
-        if (this.$store.state.route.name === 'home' && this.$store.state.route.from.name === 'view') {
-          setTimeout(() => {
-            const id = this.$store.state.route.from.params.id.toString()
-            document.querySelector('.content').scrollTop = document.getElementById(id).offsetTop
-          }, 1000)
+      afterEnter (el) {
+        const route = this.$store.state.route
+        if (route.name === 'home' && route.from.name === 'view') {
+          setTimeout(function () {
+            const id = route.from.params.id.toString()
+            VueScrollTo.scrollTo('', '1000', {
+              container: '.content',
+              offset: (document.getElementById(id).offsetTop)
+            })
+          })
         }
       }
     }

@@ -2,8 +2,8 @@
 <style src="./home.styl" lang="stylus"></style>
 
 <script lang="babel" type="text/javascript">
-  import LDefault from '../../layout/default/main'
-  import CNews from '../../components/news'
+  import LDefault from '../../layout/lay-default/main'
+  import CNews from '../../components/news/news'
 
   export default {
     components: {
@@ -14,9 +14,14 @@
       this.$store.dispatch('getNews')
     },
     computed: {
-      posts () {
-        console.log(this.$store.state.shared.news)
+      news () {
         return this.$store.state.shared.news
+      },
+      countMidias () {
+        return this.$store.state.shared.countMidias
+      },
+      countNews () {
+        return this.$store.state.shared.countNews
       },
       transitionName () {
         return this.$store.state.shared.transitionName || 'slide-left'

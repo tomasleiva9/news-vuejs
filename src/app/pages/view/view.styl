@@ -15,3 +15,17 @@
 
   .view-actions
     min-width 200px
+
+
+
+/* Transition */
+
+.transition-in
+  div
+    transform translate3d(0, 0, 0)
+    opacity 1
+    transition transform .6s $timing .2s
+
+  &:first-child
+    transition-delay: .1s
+

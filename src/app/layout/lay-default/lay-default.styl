@@ -18,12 +18,15 @@
   margin-left ($width-sidebar + $width-main-sidebar)
   height $height-header
   width 'calc(%s - %s)' % (100% $sidebars)
+  //box-shadow 0 2px 5px rgba(0,0,0,.1)
+  border-bottom 2px solid $bkg-color
 
 .content
   @extends .header
   margin-top $height-header
   padding-bottom 'calc(%s - (%s - %s))' % (100% 100% $height-header + 100)
   height 100vh
+  border 0
 
 
 

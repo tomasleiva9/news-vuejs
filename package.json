@@ -1,5 +1,5 @@
 {
-  "name": "teste",
+  "name": "NewsVue",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Tomás Leiva <tomas.leivad@gmail.com>",
@@ -12,12 +12,12 @@
   "dependencies": {
     "axios": "^0.15.3",
     "bootstrap": "^4.0.0-alpha.6",
-    "jquery": "^3.1.1",
     "moment": "^2.17.1",
     "tether": "^1.4.0",
     "velocity-animate": "^1.4.3",
     "vue": "^2.1.10",
     "vue-router": "^2.2.0",
+    "vue-scrollto": "^2.6.3",
     "vuex": "^2.1.1",
     "vuex-router-sync": "^4.1.2"
   },
