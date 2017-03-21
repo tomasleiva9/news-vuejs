@@ -1,28 +1,25 @@
-<section :id="item.Id" class="post px-4 pt-4 pb-5 d-flex flex-column justify-content-center active">
-    <section class="post-head text-truncate px-3 w-100">
+<section :id="item.Id" class="post px-4 d-flex flex-column">
+    <section class="post-head text-truncate px-4 w-100">
         <strong>{{ midia }}</strong><br>
         <span>{{item.Fonte}}</span>
-        <div class="divisor"></div>
+        <div class="divisor mx-4 my-2"></div>
         <span class="post-date">{{ filters.date(item.DataHora).format('D/MM/YY H:mm:ss') }} |
         {{ filters.date(item.DataHoraCaptura).format('D/MM/YY H:mm:ss') }}</span>
     </section>
 
-    <article>
+    <section class="post-title-section p-2 d-flex justify-content-center align-items-center">
+        <router-link @click.native="viewTransitionAnimationStart"
+                     class="post-title"
+                     :to="{ name: 'view', params: { id: item.Id }}">{{item.Titulo}}</router-link>
+    </section>
 
-        <section class="post-title-section d-flex justify-content-center align-items-center">
-            <router-link @click.native="viewTransitionAnimationStart"
-                         class="post-title"
-                         :to="{ name: 'view', params: { id: item.Id }}">{{item.Titulo}}</router-link>
-        </section>
+    <section class="post-content-section px-2 d-flex flex-wrap justify-content-center align-content-center align-items-center">
+            <span class="post-channels badge badge-pill badge-default" v-for="(canal, index) in item.Secoes.split(',')">
+                <span class="post-channels-name">{{canal.split('|')[0]}}</span>
+                <!--<span class="post-channels-aval"></span>-->
+            </span>
+    </section>
 
-        <section class="post-content-section px-2 d-flex flex-wrap justify-content-center align-items-center">
-      <span class="post-channels badge badge-pill badge-default" v-for="(canal, index) in item.Secoes.split(',')">
-        <span class="post-channels-name">{{canal.split('|')[0]}}</span>
-          <!--<span class="post-channels-aval"></span>-->
-      </span>
-        </section>
-
-    </article>
 
     <section class="post-actions d-flex align-content-left p-2">
         <a href class="mr-auto p-2"><i class="material-icons md-18">check</i></a>

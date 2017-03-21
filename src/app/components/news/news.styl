@@ -4,8 +4,14 @@
   position relative
   overflow hidden
   width 100%
+  min-height 300px
+  padding-top 100px
+  padding-bottom 50px
 
   .post-head
+    position absolute
+    top 20px
+    left 0
     text-align center
     font-size .8em
     color lighten($main-font-color, 60%)
@@ -13,15 +19,17 @@
     .divisor
       background-color lighten($main-font-color, 90%)
       height 1px
-      margin 5px 50px
 
     span
       font-size .9em
+      font-weight 300
+
+    strong
+      font-weight 600
 
   .post-title-section
-    flex 1
     text-align center
-    margin 20px
+    min-height 100px
 
     .post-title
       color lighten($main-font-color, 30%)
@@ -31,10 +39,12 @@
     flex 1
     text-align center
     width 100%
+    line-height 0
 
     .post-channels
-      color inherit
-      font-weight normal
+      color lighten($main-font-color, 55%)
+      font-weight 400
+      vertical-align middle
       font-size 70%
       background-color #f8f8f8
       border 2px solid transparent
@@ -42,24 +52,20 @@
       margin 2px
       padding 0 4px
       cursor pointer
-      vertical-align middle
 
-        .post-channels-name
-          color lighten($main-font-color, 55%)
+      .post-channels-aval
+        padding 0 3px
+        margin-left 6px
+        margin-right: -6px;
+        background-color limegreen
 
-        .post-channels-aval
-          padding 0 3px
-          margin-left 6px
-          margin-right: -6px;
-          background-color limegreen
-
-        &:hover
-          overflow hidden
+      &:hover
+        overflow hidden
 
   .post-actions
     position absolute
     left 0
-    bottom -10px
+    bottom 0
     width 100%
 
     a
