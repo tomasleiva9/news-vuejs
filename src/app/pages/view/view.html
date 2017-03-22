@@ -2,7 +2,7 @@
   <div slot="sidebar">
     <div class="view-info">
       <ul class="list-group">
-        <li v-for="(canal, index) in item.Secoes.split(',')">{{canal.split('|')[0]}}</li>
+        <li v-for="(canal, index) in item.Secoes">{{canal.nome}}</li>
       </ul>
     </div>
   </div>

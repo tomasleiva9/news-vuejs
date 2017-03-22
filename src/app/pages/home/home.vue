@@ -15,7 +15,7 @@
     },
     computed: {
       news () {
-        return this.$store.state.shared.news
+        return this.$store.getters.news
       },
       countMidias () {
         return this.$store.state.shared.countMidias

@@ -7,17 +7,7 @@
     mixins: [animations],
     props: ['postItem'],
     computed: {
-      item () { return this.postItem },
-      midia () {
-        switch (this.item.IdMidia) {
-          case 1: return 'Web'
-          case 2: return 'Impresso'
-          case 3: return 'Rádio'
-          case 4: return 'TV'
-          case 5: return 'Redes Sociais'
-          default: return 'Outros'
-        }
-      }
+      item () { return this.postItem }
     }
   }
 </script>
