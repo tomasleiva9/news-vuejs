@@ -29,7 +29,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const transition = to.name === 'home' ? 'slide-right' : 'slide-left'
-  store.dispatch('transitionName', transition)
+  store.commit('TRANSITION_NAME', transition)
   next()
 })
 

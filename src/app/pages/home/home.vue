@@ -12,6 +12,7 @@
     },
     mounted () {
       this.$store.dispatch('getNews')
+      // this.$store.dispatch('getNuxt')
     },
     computed: {
       news () {
@@ -22,9 +23,6 @@
       },
       countNews () {
         return this.$store.state.shared.countNews
-      },
-      transitionName () {
-        return this.$store.state.shared.transitionName || 'slide-left'
       }
     }
 

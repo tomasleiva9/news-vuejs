@@ -3,5 +3,6 @@ export default {
   countMidias: [],
   countNews: 0,
   failure: null,
-  transitionName: ''
+  transitionName: '',
+  nuxt: null
 }

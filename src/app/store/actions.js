@@ -10,6 +10,9 @@ export const getNews = (store, request) => {
     })
 }
 
-export const transitionName = (store, name) => {
-  store.commit('TRANSITION_NAME', name)
+export const getNuxt = (store) => {
+  Services.page.getNuxt()
+    .then((nuxt) => {
+      store.commit('GET_NUXT', nuxt)
+    })
 }

@@ -1,6 +1,6 @@
-<section :id="item.Id" class="post px-4 d-flex flex-column">
+<section :id="item.Id" class="post px-4 d-flex flex-column" :class="{active: item.ativo}">
     <section class="post-head text-truncate px-4 w-100">
-        <strong>{{ item.nomeMidia(item.IdMidia) }}</strong><br>
+        <strong>{{ item.nomeMidia(item.IdMidia) }}</strong>
         <span>{{item.Fonte}}</span>
         <div class="divisor mx-4 my-2"></div>
         <span class="post-date">{{ filters.date(item.DataHora).format('D/MM/YY H:mm:ss') }} |
@@ -14,9 +14,10 @@
     </section>
 
     <section class="post-content-section px-2 d-flex flex-wrap justify-content-center align-content-center align-items-center">
-            <span class="post-channels badge badge-pill badge-default"
-                  v-for="(canal, index) in item.Secoes">
+            <span class="post-channels badge badge-pill badge-default" :class="{active: canal.ativo}"
+                  v-for="(canal, index) in item.Secoes" @click="toggleCanal(canal, index)">
                 <span class="post-channels-name">{{canal.nome}}</span>
+                <i v-if="canal.ativo" class="post-channels-icon material-icons md-18">check_circle</i>
                 <!--<span class="post-channels-aval"></span>-->
             </span>
     </section>

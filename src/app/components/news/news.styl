@@ -5,7 +5,7 @@
   overflow hidden
   width 100%
   min-height 300px
-  padding-top 100px
+  padding-top 110px
   padding-bottom 50px
 
   .post-head
@@ -13,7 +13,7 @@
     top 20px
     left 0
     text-align center
-    font-size .8em
+    font-size .9em
     color lighten($main-font-color, 60%)
 
     .divisor
@@ -21,11 +21,15 @@
       height 1px
 
     span
-      font-size .9em
+      font-size .8em
       font-weight 300
 
     strong
       font-weight 600
+      display block
+      text-align center
+      padding 5px 0
+
 
   .post-title-section
     text-align center
@@ -52,6 +56,7 @@
       margin 2px
       padding 0 4px
       cursor pointer
+      position relative
 
       .post-channels-aval
         padding 0 3px
@@ -59,8 +64,17 @@
         margin-right: -6px;
         background-color limegreen
 
-      &:hover
-        overflow hidden
+      .post-channels-icon
+        position absolute
+        top -5px
+        right -5px
+        font-size 10px
+        color #008ec8
+        background #fff
+        margin 0
+        border-radius 50%
+        padding 0
+
 
 
   .post-actions
@@ -70,6 +84,7 @@
     width 100%
 
     a
+      transition-duration 0s
       opacity 0
       transform translate3d(0, 40px, 0)
 
@@ -113,6 +128,7 @@
           opacity 1
           transform translate3d(0, 0, 0)
           transition-delay '%sms' % (50 * i)
+          transition-duration .3s
 
     &.active::before
       border-width 0

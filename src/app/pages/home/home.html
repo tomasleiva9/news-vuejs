@@ -16,21 +16,23 @@
         </small>
       </h5>
       <div>
-        <a href>Mídias tradicionais</a>
-        <a href>Redes Sociais</a>
-        <a href>Releases</a>
+        <select name="" id="">
+          <option value="">Midias Tradicionais</option>
+          <option value="">Redes Sociais</option>
+          <option value="">Releases</option>
+        </select>
       </div>
     </div>
 
-    <div class="d-flex p-3">
+    <div class="d-flex px-3 py-1">
       <span class="mr-auto"><i class="material-icons icon-text">filter_list</i> Filtros</span>
       <label>
         <input type="checkbox"> {{news.length}} de {{countNews}} notícias
       </label>
     </div>
 
-    <div class="posts d-flex flex-wrap px-2 py-2">
-      <c-news :postItem="item" v-for="item in news"></c-news>
+    <div class="posts d-flex flex-wrap px-2">
+      <c-news :postItem="item" :postIndex="index" v-for="(item, index) in news"></c-news>
     </div>
   </div>
   <div slot="main-sidebar"></div>
