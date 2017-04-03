@@ -1,46 +1,47 @@
 <v-layout-view>
-  <div slot="sidebar">
-    <div class="view-info">
-      <ul class="list-group">
-        <li v-for="(canal, index) in item.Secoes">{{canal.nome}}</li>
-      </ul>
+    <div slot="sidebar">
+        <div class="view-info">
+            <ul class="list-group">
+                <li v-for="(canal, index) in item.Secoes">{{canal.nome}}</li>
+            </ul>
+        </div>
     </div>
-  </div>
-  <div slot="content" class="transition-in">
-    <div class="view-head p-3 text-right">
-      <select name="Clientes">
-        <option value="">Midea Carrier</option></select>
-    </div>
-    <div class="view-content d-flex">
-      <div class="view-news mr-auto">
-        <section class="view-news-head">
-          <strong> {{ item.IdMidia }} </strong><br>
-          <span> {{ item.Fonte }} </span>
-        </section>
+    <div slot="content" class="transition-in">
+        <div class="view-head p-3 text-right">
+            <select name="Clientes">
+                <option value="">Midea Carrier</option>
+            </select>
+        </div>
+        <div class="view-content d-flex">
+            <div class="view-news mr-auto">
+                <section class="view-news-head">
+                    <strong> {{ item.IdMidia }} </strong><br>
+                    <span> {{ item.Fonte }} </span>
+                </section>
 
-        <h1 class="view-news-title">{{ item.Titulo }}</h1>
+                <h1 class="view-news-title">{{ item.Titulo }}</h1>
 
-        <section class="view-news-sub text-right">
-          {{ filters.date(item.DataCadastro).format('DD/MM/YYYY') }} |
-          {{ filters.date(item.DataVeiculacao).format('DD/MM/YYYY') }}
-        </section>
+                <section class="view-news-sub text-right">
+                    {{ filters.date(item.DataCadastro).format('DD/MM/YYYY') }} |
+                    {{ filters.date(item.DataVeiculacao).format('DD/MM/YYYY') }}
+                </section>
 
-        <section class="view-news-content d-flex">
-            <div class="view-news-content-actions mr-auto">
-              <i class="material-icons p-2">format_align_left</i><br>
-              <i class="material-icons p-2">photo</i>
+                <section class="view-news-content d-flex">
+                    <div class="view-news-content-actions mr-auto">
+                        <i class="material-icons p-2">format_align_left</i><br>
+                        <i class="material-icons p-2">photo</i>
+                    </div>
+                    <div class="view-news-content-preview text-justify">
+                        {{ item.Conteudo }}
+                    </div>
+                </section>
             </div>
-            <div class="view-news-content-preview text-justify">
-              {{ item.Conteudo }}
+            <div class="view-actions text-right">
+                <router-link to="/" class="titulo">
+                    <i class="material-icons p-2">close</i><br>
+                </router-link>
             </div>
-        </section>
-      </div>
-      <div class="view-actions text-right">
-        <router-link to="/" class="titulo">
-          <i class="material-icons p-2">close</i><br>
-        </router-link>
-      </div>
-    </div>
+        </div>
 
-  </div>
+    </div>
 </v-layout-view>

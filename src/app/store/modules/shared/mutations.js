@@ -5,6 +5,9 @@ export default {
     state.countMidias = news.CountNoticiasPorMidia
     state.news = news.Noticias
   },
+  'GET_NOTICIA' (state, noticia) {
+    state.noticia = noticia
+  },
   'GET_NUXT' (state, nuxt) {
     state.nuxt = nuxt
   },

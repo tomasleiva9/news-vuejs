@@ -12,7 +12,6 @@
     },
     mounted () {
       this.$store.dispatch('getNews')
-      // this.$store.dispatch('getNuxt')
     },
     computed: {
       news () {

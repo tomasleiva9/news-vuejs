@@ -8,12 +8,21 @@
     components: {
       VLayoutView
     },
+    mounted () {
+      const state = this.$store.state
+      const id = state.route.params.id
+      if (state.shared.news.length) {
+        const noticia = state.shared.news.filter(function (obj) {
+          return obj.Id === id
+        })[0]
+        this.$store.dispatch('getNoticia', {noticia})
+      } else {
+        this.$store.dispatch('getNoticia', {id})
+      }
+    },
     computed: {
       item () {
-        const state = this.$store.state
-        return state.shared.news.filter(function (obj) {
-          return obj.Id === state.route.params.id
-        })[0] || []
+        return this.$store.state.shared.noticia || []
       }
     }
   }

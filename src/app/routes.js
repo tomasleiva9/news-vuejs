@@ -27,10 +27,14 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
+const getTransition = function (to, next) {
   const transition = to.name === 'home' ? 'slide-right' : 'slide-left'
   store.commit('TRANSITION_NAME', transition)
   next()
+}
+
+router.beforeEach((to, from, next) => {
+  getTransition(to, next)
 })
 
 export default router
