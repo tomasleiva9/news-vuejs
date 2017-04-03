@@ -14,23 +14,27 @@
     </section>
 
     <section class="post-content-section px-2 d-flex flex-wrap justify-content-center align-content-center align-items-center">
-        <span style="position: relative" v-for="(canal, index) in item.Secoes" @click="toggleCanal(canal, index)">
+        <span style="position: relative" v-for="(canal, index) in item.Secoes" @click="toggleCanais(canal, index)">
             <span class="post-channels badge badge-pill badge-default" :class="{active: canal.ativo}">
                 <span class="post-channels-aval"></span>
                 <span class="post-channels-name">{{canal.nome}}</span>
             </span>
             <i v-if="canal.ativo" class="post-channels-icon material-icons md-18">check_circle</i>
         </span>
-
     </section>
 
 
-    <section class="post-actions d-flex align-content-left p-2">
-        <a href class="mr-auto p-2"><i class="material-icons md-18">check</i></a>
-        <a href class="p-2"><i class="material-icons md-18">file_download</i></a>
-        <a href class="p-2"><i class="material-icons md-18">email</i></a>
-        <a href class="p-2"><i class="material-icons md-18">delete</i></a>
-        <a href class="p-2"><i class="material-icons md-18">more_vert</i></a>
-    </section>
+    <div class="post-actions left">
+        <button href class="btn btn-check" @click="toggleCanais(item.Secoes)" :class="{active: item.ativo}">
+            <i class="material-icons md-18">check</i></button>
+    </div>
+    <div class="post-actions right">
+        <div v-show="actionMenuOpen">
+            <button href class="btn btn-sm"><i class="material-icons md-18">file_download</i></button>
+            <button href class="btn btn-sm "><i class="material-icons md-18">email</i></button>
+            <button href class="btn btn-sm"><i class="material-icons md-18">delete</i></button>
+        </div>
+        <button href class="btn btn-sm" @click="actionMenuOpen = !actionMenuOpen"><i class="material-icons md-18">more_vert</i></button>
+    </div>
 
 </section>

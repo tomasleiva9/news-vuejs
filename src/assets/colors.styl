@@ -28,8 +28,16 @@ body
         opacity 1
 
   .post-actions
-    a
+    button
       color $main-color
+
+      &.active
+        background-color $main-color
+        color $main-bkg-font-color
+
+      &:hover
+        background-color $main-color
+        color $main-bkg-font-color
 
   &:hover
   &:active

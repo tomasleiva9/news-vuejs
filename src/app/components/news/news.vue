@@ -7,13 +7,28 @@
   export default {
     mixins: [animations],
     props: ['postItem', 'postIndex'],
+    data () {
+      return {
+        actionMenuOpen: false
+      }
+    },
     computed: {
       item () { return this.postItem }
     },
     methods: {
-      toggleCanal (canal, index) {
-        canal.ativo = !canal.ativo
-        Vue.set(this.item.Secoes, index, canal)
+      toggleCanais (canais, index) {
+        const item = this.item
+        if (index !== undefined) {
+          canais.ativo = !canais.ativo
+          Vue.set(item.Secoes, index, canais)
+        } else {
+          const ativos = item.Secoes.filter(i => i.ativo)
+          canais.forEach(function (canal, i) {
+            canal.ativo = !ativos.length
+            Vue.set(item.Secoes, i, canal)
+          })
+        }
+
         this.toogleItem()
       },
       toogleItem () {

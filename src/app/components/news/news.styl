@@ -83,14 +83,38 @@
 
   .post-actions
     position absolute
-    left 0
-    bottom 0
-    width 100%
+    bottom 20px
+    width: 40px;
+    text-align: center;
 
-    a
+    button
       transition-duration 0s
       opacity 0
       transform translate3d(0, 40px, 0)
+      width: 30px;
+      height: 30px;
+      line-height: 1em;
+      border-radius 50%
+      background-color transparent
+      padding 0
+
+      &:focus
+      &:active
+        box-shadow none
+
+      &:hover
+        cursor pointer
+
+      &.active
+        color #fff
+        box-shadow 0 1px 1px rgba(0, 0, 0, .3)
+
+    &.left
+      left 15px
+
+    &.right
+      right 0px
+
 
   & *
     transition transform .3s $timing, opacity .3s $timing
@@ -109,7 +133,7 @@
 
   &.active
     .post-actions
-      a
+      button.btn-check
         opacity 1
         transform translate3d(0, 0, 0)
 
@@ -135,7 +159,7 @@
 
     .post-actions
       for i in 1 2 3 4 5
-        a:nth-child({i})
+        button:nth-child({i})
           display inherit
           opacity 1
           transform translate3d(0, 0, 0)
@@ -144,7 +168,7 @@
 
 
     &.active::before
-      border-width 0
+      border-color: transparent !important
 
     &::before
       box-shadow: none

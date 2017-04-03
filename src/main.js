@@ -4,7 +4,7 @@ import store from './app/store/main'
 import router from './app/routes'
 import Axios from 'axios'
 
-// Vuex-router-sync
+// Sincronização do Vuex com o Router
 VuexRouterSync.sync(store, router)
 Vue.router = router
 
