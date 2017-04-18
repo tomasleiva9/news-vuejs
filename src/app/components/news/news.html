@@ -16,7 +16,7 @@
     <section class="post-content-section px-2 d-flex flex-wrap justify-content-center align-content-center align-items-center">
         <span style="position: relative" v-for="(canal, index) in item.Secoes" @click="toggleCanais(canal, index)">
             <span class="post-channels badge badge-pill badge-default" :class="{active: canal.ativo}">
-                <span class="post-channels-aval"></span>
+                <!--<span class="post-channels-aval"></span>-->
                 <span class="post-channels-name">{{canal.nome}}</span>
             </span>
             <i v-if="canal.ativo" class="post-channels-icon material-icons md-18">check_circle</i>
