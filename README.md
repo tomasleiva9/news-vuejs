@@ -1,6 +1,6 @@
 # News page with Vue.js
 
-* Features *
+**Features**
 
 - Vue.js
 - Vuex
