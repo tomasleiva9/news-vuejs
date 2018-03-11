@@ -1,5 +1,5 @@
 <template src="./news.html"></template>
-<style src="./news.styl" lang="stylus" scoped></style>
+<style src="./news.styl" lang="stylus"></style>
 <script lang="babel" type="text/javascript">
   import Vue from 'Vue'
   import animations from '../../mixins/animations'
